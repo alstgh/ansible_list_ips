@@ -1,0 +1,49 @@
+---
+- name: choise ip-address or hostnames or date as vars
+  gather_facts: 'yes'
+  hosts: localhost
+
+#  vars_files:
+#    - /etc/ansible/new_hosts.yml
+
+
+#  vars:
+#    date: "{{ ansible_date_time.date }}_{{ ansible_date_time.time }}"
+#
+
+
+#  vars:
+#    ip: "{{ groups['staging_linux'] | map('extract', hostvars, ['ansible_host']) | join(',') }}"
+#
+#
+
+
+#  vars:
+#    ip1: "{{ groups['staging_windows'] | map('extract', hostvars, ['ansible_host']) | join(',') }}"
+#    ip2: "{{ groups['staging_linux'] | map('extract', hostvars, ['ansible_host']) | join(',') }}"
+#  tasks:
+#    - debug: msg="{{ ip1 }},{{ ip2 }}"
+#
+#
+
+
+  vars:
+    ip: "{{ ['balancer1'] | map('extract', hostvars, ['ansible_host']) | join(',') }}"
+#
+#
+
+
+#  vars:
+#    ip: "{{ groups['staging_linux'] | map('extract', hostvars, ['ansible_host']) | list }}"
+#
+#
+
+
+#  vars:
+#    name_hosts: "{{ groups['new_balancers'] | map('extract', hostvars, ['inventory_hostname']) | join(',') }}"
+
+
+  tasks:
+    - debug: msg="{{ ip }}"
+#    - debug: msg="{{ date }}"
+#    - debug: msg="{{ name_hosts }}"
