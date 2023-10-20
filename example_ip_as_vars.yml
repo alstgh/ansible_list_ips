@@ -47,3 +47,6 @@
     - debug: msg="{{ ip }}"
 #    - debug: msg="{{ date }}"
 #    - debug: msg="{{ name_hosts }}"
+    # - debug: msg="{{ ip1 }}"
+    # - debug: msg="{{ ip2 }}"
+    # - debug: msg="{{ ip3 }}"
