@@ -23,5 +23,3 @@
            {%- endfor -%}
 
    - debug: msg="{{ host_list.split(',') | list }}"
-
-### testing
