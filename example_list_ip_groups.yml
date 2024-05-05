@@ -23,3 +23,13 @@
            {%- endfor -%}
 
    - debug: msg="{{ host_list.split(',') | list }}"
+
+   - name: List IPs
+     set_fact:
+       host_list: >-
+           {%- for host in groups['staging_windows'] -%}
+               {{ hostvars[host]['ansible_host'] }}
+               {%- if not loop.last -%},{%- endif -%}
+           {%- endfor -%}
+
+   - debug: msg="{{ host_list.split(',') | list }}"
